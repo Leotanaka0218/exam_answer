@@ -8,7 +8,7 @@
   \section{}
     \subsection{}
       \begin{align*}
-        \lim_{x \to \infty} f(x) = \lim_{x \ to \infty} \mathrm{Tan}^{-1} x + \lim_{x \ to \infty} \mathrm{Tan}^{-1} \frac{1}{x}\\
+        \lim_{x \to \infty} f(x) = \lim_{x \to \infty} \mathrm{Tan}^{-1} x + \lim_{x \to \infty} \mathrm{Tan}^{-1} \frac{1}{x}\\
         = \frac{\pi}{2} + 0 = \underline{\frac{\pi}{2}}
       \end{align*}
     \subsection{}
@@ -29,7 +29,7 @@
       \end{align*}
       である．これは正接の定義による．
       このことを用いると
-      $f(1) = f(2) = \pi / 2$
+      $f(1) = f(2) = \underline{\pi / 2}$
   \section{}
       $x^3 + 3x^2 + 4x + 2 = (x + 2)(x^2 + 2x + 2)$より
       \begin{align*}
@@ -41,7 +41,7 @@
       \end{align*}
   \section{}
     \subsection{}
-      積分区間Aは直線と放物線で囲まれる領域であり，下図の通りである．
+      積分区間Aは直線と放物線で囲まれる領域であり，右上図の通りである．
       \begin{tikzpicture}[scale = 3]
           \draw[->,>=stealth,semithick](-0.5,0)--(1.5,0)node[above]{$x$};%x軸
           \draw[->,>=stealth,semithick](0,-0.5)--(0,1.5)node[right]{$y$};%y軸
@@ -59,7 +59,7 @@
       前問と同様に考えれば，
       \begin{align*}
         \int_{0}^{1}\int_{\sqrt{1-y^2}}^{2} \frac{y}{-y^4 + 2y^2+15} \cdot x^3 \mathrm{d}x \mathrm{d}y
-        = \int_{0}^{1} \frac{y}{-y^4 + 2y^2+15} \cdot (-y^4 + 2y^2+15) \mathrm{d}y
+        = \frac{1}{4}\int_{0}^{1} \frac{y}{-y^4 + 2y^2+15} \cdot (-y^4 + 2y^2+15) \mathrm{d}y
         = \underline{\frac{1}{8}}
       \end{align*}
   \section{}
@@ -73,8 +73,8 @@
         \end{vmatrix}
         = r\\
         f(x, y) = r ^{-3} \sin \left(\frac{1}{r}\right)\\
-        % \overline{B}(R) - B(3/\pi) = \left{(r, \theta) \middle| 3/ \pi \leq r \leq R, 0 \leq \theta < 2\pi \right}
-      \end{align*}
+        \overline{B}(R) - B(3/\pi) = \left\{(r, \theta) \middle| 3/ \pi \leq r \leq R, 0 \leq \theta < 2\pi\right\}
+      \end{align*}  
       ここで
       \begin{align*}
         g(R) = \iint_{\overline{B}(R) - B(3/\pi)} r ^{-3} \sin \left(\frac{1}{r}\right) \cdot r \mathrm{d}r \mathrm{d}\theta
@@ -82,7 +82,12 @@
         = \int_{0}^{2\pi} \left[\cos \left(\frac{1}{r}\right)\right]_{3/\pi}^{R}\mathrm{d}\theta\\
         = 2\pi \left(\cos \left(\frac{1}{R}\right) - \frac{1}{2}\right)
       \end{align*}
-      より問題文の条件の時，$g(R)$は$R$に関して単調増加である．%どう書けばいいの？
+      より問題文の条件の時，$g(R)$は$R$に関して単調増加である．これは，外側の円周の半径が大きくなることに対応しているため，
+      \begin{align*}
+        \overline{B}(R) - B(3/\pi) \subset D(R) - B(3/\pi) \subset \overline{B}(\sqrt{2}R) - B(3/\pi)
+      \end{align*}
+      から，題意が成立する．\qed
+      %どう書けばいいの？
     \subsection{}
       前問で
       \begin{align*}
@@ -90,7 +95,7 @@
       \end{align*}
       より，挟み撃ちの定理から
       \begin{align*}
-        \lim_{R \ to \infty} \iint_{D(R) - B(3/\pi)} f(x, y) \mathrm{d}x\mathrm{d}y = \underline{\pi}
+        \lim_{R \to \infty} \iint_{D(R) - B(3/\pi)} f(x, y) \mathrm{d}x\mathrm{d}y = \underline{\pi}
       \end{align*}
   \section{}
     \subsection{}
@@ -118,9 +123,28 @@
     \subsection{}
       グラフ表示されることから，$\bm{r}(x, y) = (x, y, \phi(x, y))$とすると，
       \begin{align*}
-        \partial_x \bm{r} = (1, 0, \phi_x), \\
-        \partial_y \bm{r} = (0, 1, \phi_y)
+        \phi_x = \frac{x}{\sqrt{1 - x^2 - y^2}},
+        \phi_y = \frac{y}{\sqrt{1 - x^2 - y^2}}\\
+        \partial_x \bm{r} = (1, 0, \phi_x),
+        \partial_y \bm{r} = (0, 1, \phi_y)\\
         \bm{n} = \pm \frac{\partial_x \bm{r} \times \partial_y \bm{r}}{\|\partial_x \bm{r} \times \partial_y \bm{r}\|}\\
-        = \pm \frac{1}{\sqrt\phi^2_x}
+        = \pm \frac{1}{\sqrt{\phi^2_x + \phi^2_y + 1}} \cdot 
+        \begin{pmatrix}
+          -\phi_x\\
+          -\phi_y\\
+          1
+        \end{pmatrix}
+      \end{align*}
+      ここで，$\bm{n} \cdot \bm{e}_z \geq 0$より複号は正で，$\phi_x, \phi_y$にそれぞれ代入すれば，
+      \begin{align*}
+        \bm{n} =\underline{\begin{pmatrix} -x\\ -y\\ \sqrt{1-x^2-y^2} \end{pmatrix}}
+      \end{align*}
+      さらに，
+      \begin{align*}
+        \int_{A} \bm{f} \cdot \bm{n} \mathrm{d}S
+        = \int_{0}^{2\pi}\int_{0}^{\sqrt{3}/2} (-r^2 \cos^2 \theta -r^2 \sin^2 \theta + 1 - r^2) \mathrm{d}r \mathrm{d}\theta\\
+        = \int_{0}^{2\pi}\int_{0}^{\sqrt{3}/2} (1 - 2r^2) \mathrm{d}r \mathrm{d}\theta
+        = \int_{0}^{2\pi} \left[r- \frac{2}{3} r^3\right]_{0}^{\sqrt{3}/2} \mathrm{d}\theta\\
+        = \underline{\frac{\sqrt{3}}{2}\pi}
       \end{align*}
 \end{document}

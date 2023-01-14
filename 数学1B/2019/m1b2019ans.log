@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.6.29)  15 JAN 2023 01:06
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.6.29)  15 JAN 2023 01:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -914,4 +914,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  91i,14n,93p,424b,1019s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on m1b2019ans.dvi (3 pages, 15868 bytes).
+Output written on m1b2019ans.dvi (3 pages, 16068 bytes).
