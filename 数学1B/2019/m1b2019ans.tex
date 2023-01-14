@@ -2,21 +2,31 @@
 \usepackage{amsmath, amssymb, type1cm, amsfonts, latexsym, mathtools, bm, amsthm, url, pict2e, otf}
 \usepackage{graphicx}
 \begin{document}
-\section{}
-  \subsection{}
-    \begin{align*}
-      \lim_{x \to \infty} f(x) = \lim_{x \ to \infty} \mathrm{Tan}^{-1} x + \lim_{x \ to \infty} \mathrm{Tan}^{-1} \frac{1}{x}\\
-      = \frac{\pi}{2} + 0 = \underline{\frac{\pi}{2}}
-    \end{align*}
-  \subsection{}
-    $x = \tan y$の両辺を$x$で微分すると
-    \begin{align*}
-      1 = \frac{1}{\frac{1}{1 + \tan^2 y}} \cdot \frac{\mathrm{d}y}{\mathrm{d}x}\\
-      \Leftrightarrow \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1}{1 +\tan^2 y} = \frac{1}{1 + x^2}
-    \end{align*}
-    これより，
-    \begin{align*}
-      f'(x) = \frac{1}{1 + x^2} + \frac{1}{1+\left(\frac{1}{x}\right)^2}\cdot -\left(\frac{1}{x}\right)^2\\
-      = \underline{0}
-    \end{align*}
+  \section{}
+    \subsection{}
+      \begin{align*}
+        \lim_{x \to \infty} f(x) = \lim_{x \ to \infty} \mathrm{Tan}^{-1} x + \lim_{x \ to \infty} \mathrm{Tan}^{-1} \frac{1}{x}\\
+        = \frac{\pi}{2} + 0 = \underline{\frac{\pi}{2}}
+      \end{align*}
+    \subsection{}
+      $x = \tan y$の両辺を$x$で微分すると
+      \begin{align*}
+        1 = \frac{1}{\frac{1}{1 + \tan^2 y}} \cdot \frac{\mathrm{d}y}{\mathrm{d}x}\\
+        \Leftrightarrow \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1}{1 +\tan^2 y} = \frac{1}{1 + x^2}
+      \end{align*}
+      これより，
+      \begin{align*}
+        f'(x) = \frac{1}{1 + x^2} + \frac{1}{1+\left(\frac{1}{x}\right)^2}\cdot -\left(\frac{1}{x}\right)^2\\
+        = \underline{0}
+      \end{align*}
+    \subsection{}
+      $b/a > 0$の時，
+      \begin{align*}
+        \mathrm{Tan}^{-1} \left(\frac{b}{a}\right) + \mathrm{Tan}^{-1} \left(\frac{a}{b}\right) = \frac{\pi}{2}
+      \end{align*}
+      である．これは正接の定義による．
+      このことを用いると
+      $f(1) = f(2) = \pi / 2$
+  \section{}
+    
 \end{document}
