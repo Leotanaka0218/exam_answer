@@ -1,6 +1,9 @@
-\documentclass[dvipdfmx]{article}
+\documentclass[dvipdfmx]{jsarticle}
 \usepackage{amsmath, amssymb, type1cm, amsfonts, latexsym, mathtools, bm, amsthm, url, pict2e, otf}
+\usepackage{tikz}
+\usepackage{newpxtext, newpxmath}
 \usepackage{graphicx}
+\usetikzlibrary{intersections,calc,arrows.meta}
 \begin{document}
   \section{}
     \subsection{}
@@ -28,5 +31,96 @@
       このことを用いると
       $f(1) = f(2) = \pi / 2$
   \section{}
-    
+      $x^3 + 3x^2 + 4x + 2 = (x + 2)(x^2 + 2x + 2)$より
+      \begin{align*}
+        \int_{1}^{2} \frac{1}{x^3 + 3x^2 + 4x + 2} \mathrm{d}x 
+        = \int_{1}^{2} \left(\frac{1}{x + 1} - \frac{x + 1}{x^2 + 2x + 2}\right) \mathrm{d}x\\
+        = \left[\log |x + 1|\right]_{1}^{2} -\frac{1}{2}\int_{1}^{2} \frac{\left(\frac{(x+1)^2 + 1}{2}\right)'}{(x+1)^2 + 1}\mathrm{d}x
+        = \log \frac{3}{2} - \frac{1}{2} \left[\log \frac{(x+1)^2 + 1}{2}\right]_{1}^{2}\\
+        = \underline{\log \frac{3}{2} - \frac{1}{2}\log 2}
+      \end{align*}
+  \section{}
+    \subsection{}
+      積分区間Aは直線と放物線で囲まれる領域であり，下図の通りである．
+      \begin{tikzpicture}[scale = 3]
+          \draw[->,>=stealth,semithick](-0.5,0)--(1.5,0)node[above]{$x$};%x軸
+          \draw[->,>=stealth,semithick](0,-0.5)--(0,1.5)node[right]{$y$};%y軸
+          \draw(0,0)node[below left]{O};%原点
+          \draw[domain=0:1] plot(\x,\x) node[above left]{$y=x$};
+          \draw[domain=0:1] plot(\x,\x^2)node[below right]{$y=x^2$};
+          \draw[dashed](0, 1)node[left]{1}--(1, 1)--(1, 0)node[below]{1};
+      \end{tikzpicture}
+      これより，
+      \begin{align*}
+        \int_{0}^{1} \left(\int_{y}^{\sqrt{y}} f(x, y) \mathrm{d}x\right) \mathrm{d}y = \iint_{A} f(x, y) \mathrm{d}x \mathrm{d}y\\
+        = \underline{\int_{0}^{1} \left(\int_{x^2}^{x} f(x, y) \mathrm{d}y\right)} \mathrm{d}x
+      \end{align*}
+    \subsection{}
+      前問と同様に考えれば，
+      \begin{align*}
+        \int_{0}^{1}\int_{\sqrt{1-y^2}}^{2} \frac{y}{-y^4 + 2y^2+15} \cdot x^3 \mathrm{d}x \mathrm{d}y
+        = \int_{0}^{1} \frac{y}{-y^4 + 2y^2+15} \cdot (-y^4 + 2y^2+15) \mathrm{d}y
+        = \underline{\frac{1}{8}}
+      \end{align*}
+  \section{}
+    \subsection{}
+      $x = r \cos \theta, y = r \sin \theta$ と準備すると，
+      \begin{align*}
+        J = 
+        \begin{vmatrix}
+          \cos \theta & -r\sin \theta \\
+          \sin \theta & r \sin \theta
+        \end{vmatrix}
+        = r\\
+        f(x, y) = r ^{-3} \sin \left(\frac{1}{r}\right)\\
+        % \overline{B}(R) - B(3/\pi) = \left{(r, \theta) \middle| 3/ \pi \leq r \leq R, 0 \leq \theta < 2\pi \right}
+      \end{align*}
+      ここで
+      \begin{align*}
+        g(R) = \iint_{\overline{B}(R) - B(3/\pi)} r ^{-3} \sin \left(\frac{1}{r}\right) \cdot r \mathrm{d}r \mathrm{d}\theta
+        = -\int_{0}^{2\pi} \int_{3/\pi}^{R} \left(\frac{1}{r}\right)' \sin \left(\frac{1}{r}\right) \mathrm{d}r \mathrm{d}\theta\\
+        = \int_{0}^{2\pi} \left[\cos \left(\frac{1}{r}\right)\right]_{3/\pi}^{R}\mathrm{d}\theta\\
+        = 2\pi \left(\cos \left(\frac{1}{R}\right) - \frac{1}{2}\right)
+      \end{align*}
+      より問題文の条件の時，$g(R)$は$R$に関して単調増加である．%どう書けばいいの？
+    \subsection{}
+      前問で
+      \begin{align*}
+        \lim_{R \to \infty} g(R) = \pi, \lim_{R \to \infty} g(\sqrt{2}R) = \pi
+      \end{align*}
+      より，挟み撃ちの定理から
+      \begin{align*}
+        \lim_{R \ to \infty} \iint_{D(R) - B(3/\pi)} f(x, y) \mathrm{d}x\mathrm{d}y = \underline{\pi}
+      \end{align*}
+  \section{}
+    \subsection{}
+      \begin{align*}
+        \nabla \bm{r}(t) =
+        \begin{pmatrix}
+          e^t(\cos t - \sin t)\\
+          e^t(\sin t - \cos t)\\
+          e^t
+        \end{pmatrix}
+        , \bm{f}(x, y, z) = \frac{1}{2}
+        \begin{pmatrix}
+          e^{-t} \cos t\\
+          e^{-t} \sin t\\
+          e^{-t}
+        \end{pmatrix}
+      \end{align*}
+      を用いれば
+      \begin{align*}
+        \int_{\Gamma} \bm{f} \cdot \mathrm{d} \bm{r} =\frac{1}{2} \int_{0}^{10} (\cos t (\cos t - \sin t) + \sin t (\sin t - \cos t) + 1) \mathrm{d}t\\
+        = \int_{0}^{10} 1 - \sin t (\sin t )' \mathrm{d}t
+        = [t - \frac{\sin^2 t}{2}]_{0}^{10}\\
+        = \underline{10 - \frac{\sin^2 10}{2}}
+      \end{align*}
+    \subsection{}
+      グラフ表示されることから，$\bm{r}(x, y) = (x, y, \phi(x, y))$とすると，
+      \begin{align*}
+        \partial_x \bm{r} = (1, 0, \phi_x), \\
+        \partial_y \bm{r} = (0, 1, \phi_y)
+        \bm{n} = \pm \frac{\partial_x \bm{r} \times \partial_y \bm{r}}{\|\partial_x \bm{r} \times \partial_y \bm{r}\|}\\
+        = \pm \frac{1}{\sqrt\phi^2_x}
+      \end{align*}
 \end{document}
