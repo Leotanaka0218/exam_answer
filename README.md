@@ -40,6 +40,6 @@ offline用にダウンロードしたい => 全画面表示にしてから，cod
 
 | 日付 | 科目 | 年度 | 備考 | 担当 |
 |---| --- | --- | --- |---|
-| 2023/1/14 | 数学1B | [2019](/M1B/2019/m1b2019.tex) | 大問1の途中です | [harry-keio-univ](https://github.com/harry-keio-univ) |
+| 2023/1/14 | 数学1B | [2019](/M1B/2019/m1b2019.tex) | 大問2の途中です | [harry-keio-univ](https://github.com/harry-keio-univ) |
 | 2023/1/14 | 化学A | [2014-19](./%E5%8C%96%E5%AD%A6A/) | 複数年度の追加 | 大学配布 |
 
