@@ -43,4 +43,5 @@ offline用にダウンロードしたい => 全画面表示にしてから，cod
 | 2023/1/14 | 数学1B | [2019](/M1B/2019/m1b2019.tex) | 解答を全て追加しました | [harry-keio-univ](https://github.com/harry-keio-univ) |
 | 2023/1/14 | 化学A | [2014-19](./%E5%8C%96%E5%AD%A6A/) | 複数年度の追加 | 大学配布 |
 | 2023/1/16 | 化学B | [演習問題](./%E5%8C%96%E5%AD%A6B/%E6%BC%94%E7%BF%92%E5%95%8F%E9%A1%8C/out/drill.pdf) | 演習問題，1-9と29の解答を追加 | [harry-keio-univ](https://github.com/harry-keio-univ) |
+| 2023/1/19 | 数学1B | [2019](/M1B/2019/m1b2019.tex) | 解答を修正 | [harry-keio-univ](https://github.com/harry-keio-univ) |
 
