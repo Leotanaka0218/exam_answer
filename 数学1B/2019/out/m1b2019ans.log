@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.6.29)  15 JAN 2023 01:32
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.6.29)  19 JAN 2023 20:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -741,7 +741,7 @@ Overfull \hbox (33.57475pt too wide) in paragraph at lines 44--54
 Here is how much of TeX's memory you used:
  20426 strings out of 478496
  376473 string characters out of 5854316
- 657616 words of memory out of 5000000
+ 657617 words of memory out of 5000000
  38714 multiletter control sequences out of 15000+600000
  506986 words of font info for 113 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
